@@ -1,0 +1,18 @@
+{
+  "name": "node_11_devdependencies",
+  "version": "1.0.0",
+  "description": "Dependencies that are needed during DEVELOPMENT and will not be install when ``` npm ci ``` is executed. Though  ``` npm install ``` will install DevDependencies as well",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
