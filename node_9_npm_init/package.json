@@ -1,0 +1,13 @@
+{
+  "name": "node_9_npm_init",
+  "version": "1.0.0",
+  "description": "1. Package name: default = folder name. But if you want to publish this then the name should be unique",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+// You can change these values later so no pressure
