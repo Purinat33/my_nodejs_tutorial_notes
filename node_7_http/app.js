@@ -11,6 +11,23 @@ const http = require('http');
 */
 
 const server = http.createServer((req, res)=>{
+    // console.log(req); //Notice that log doesnt show up righr away
+    //We need to refresh
+    
+    //--------------------
+    //Getting URL
+    if(req.url == '/'){ /* Signify home page*/
+        res.write('This is index page');
+    }
+    if(req.url == '/about'){
+        res.write('Here is the about page');
+    }
+    res.end(`
+        <h1>This page does not exists</h1>
+        <p>Please go back</p>
+        <a href="/">Click here</a>
+    `);
+
     res.write("Welcome to my homepage!!!");
     res.end();
 });
@@ -31,3 +48,5 @@ server.listen(port);
 
 //Note that the blinking (the program runs indefinitely)
 // means that its waiting for requests
+
+//We want the web server to always be up
