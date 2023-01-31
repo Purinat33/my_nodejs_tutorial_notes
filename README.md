@@ -5,3 +5,5 @@
 [John Smilga's GitHub](https://github.com/john-smilga/node-express-course)<br>
 
 [Youtube Channel](https://www.youtube.com/channel/UCMZFwxv5l-XtKi693qMJptA)
+
+[Resource on Package.json and npm](https://nodesource.com/blog/the-basics-of-package-json-in-node-js-and-npm/)
