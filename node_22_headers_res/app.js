@@ -15,3 +15,6 @@ server.listen(3000);
 //HTTP response status code
 //https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 //No need to remember everything just yet
+
+//MIME Type (What we're sending back to the client)
+//https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
