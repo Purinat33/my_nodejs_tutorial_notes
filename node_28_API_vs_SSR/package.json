@@ -4,7 +4,8 @@
   "description": "In ExpressJS, we either use it to setup API, or templates with Server Side Rendering (SSR)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
