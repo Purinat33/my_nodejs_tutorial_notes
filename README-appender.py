@@ -1,34 +1,41 @@
 import os
 
-root_directory = os.getcwd()
-main_readme_path = os.path.join(root_directory, 'README.md')
-readme_links = []
+
+def get_relative_path(path, root):
+    relative_path = os.path.relpath(path, root)
+    return relative_path.replace("\\", "/")
 
 
-def read_files(dir):
-    for file in os.listdir(dir):
-        file_path = os.path.join(dir, file)
-        if os.path.isdir(file_path):
-            read_files(file_path)
-        elif file == 'README.md':
-            link = f'- [{os.path.basename(dir)}]({os.path.relpath(file_path, root_directory)})'
-            readme_links.append(link)
+def add_link_to_readme(file_path, title, readme_content, root_folder):
+    relative_path = get_relative_path(file_path, root_folder)
+    link = f"- [{title}]({relative_path})\n"
+    if link not in readme_content:
+        readme_content.append(link)
 
 
-read_files(root_directory)
+def traverse_directory(root_folder, readme_content):
+    for subdir, dirs, files in os.walk(root_folder):
+        for file in files:
+            file_path = os.path.join(subdir, file)
+            if file == "README.md" and "node_modules" not in file_path:
+                title = os.path.basename(subdir)
+                if title.startswith("node_"):
+                    add_link_to_readme(
+                        file_path, title, node_readme_content, root_folder)
+                else:
+                    add_link_to_readme(
+                        file_path, title, other_readme_content, root_folder)
 
-if len(readme_links) > 0:
-    with open(main_readme_path, 'r') as main_readme:
-        existing_content = main_readme.read()
-    new_links = [link for link in readme_links if link not in existing_content]
 
-    if len(new_links) > 0:
-        with open(main_readme_path, 'a') as main_readme:
-            main_readme.write(
-                '\n\nLinks to README files:\n\n' + '\n'.join(new_links))
-        print(
-            f'{len(new_links)} new links to README files appended to the main README.md')
-    else:
-        print('All README links already exist in the main README.md')
-else:
-    print('No README files found')
+if __name__ == "__main__":
+    root_folder = os.getcwd()
+    node_readme_content = []
+    other_readme_content = []
+
+    traverse_directory(root_folder, node_readme_content)
+
+    with open(os.path.join(root_folder, "README.md"), "a") as readme_file:
+        readme_file.write("## READMEs in node_ folders\n")
+        readme_file.writelines(node_readme_content)
+        readme_file.write("\n## READMEs in other folders\n")
+        readme_file.writelines(other_readme_content)
