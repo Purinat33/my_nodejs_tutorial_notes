@@ -3,11 +3,18 @@
 In ExpressJS, we either use it to setup API, or templates with Server Side Rendering (SSR)
 
 - API (for Express/HTTP case):
-    - Setting up an HTTP interface to interact with our data. Data are in the form of JSON
+    - Setting up an HTTP interface to interact with our data. Data are in the form of "JSON" (JavaScript Object Notation)
     - Send DATA
-    - res.json()
+    
+    ```js
+    res.json()
+    ```
+    this method will do all the heavy lifting for us
 
-- SSR:
-    - Send in the form of pure HTML template
+- SSR (Server Side Rendering):
+    - Send in the form of pure HTML+CSS+JavaScript templates
     - Send TEMPLATE
-    - res.render()
+    
+    ```js
+    res.render()
+    ```
