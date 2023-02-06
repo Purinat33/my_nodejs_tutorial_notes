@@ -54,7 +54,7 @@ app.get('/api/product/:productID', (req,res)=>{
 });
 
 //Route params can get more complex
-app.get('/api/product/:productID/reviews/:reviewID', (req,res)=>{
+app.get('/api/products/:productID/reviews/:reviewID', (req,res)=>{
     console.log(req.params);
     res.send('Hello world')
 });
