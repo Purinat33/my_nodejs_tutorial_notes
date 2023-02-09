@@ -10,7 +10,6 @@
 
 [Slides](https://course-api.com/)
 ## READMEs in node_ folders
-- [node_tutorial](README.md)
 - [node_25_expressjs](node_25_expressjs/README.md)
 - [node_15_loop_async_events_streams](node_15_loop_async_events_streams/README.md)
 - [node_11_devDependencies](node_11_devDependencies/README.md)
@@ -24,11 +23,13 @@
 - [node_16_asyc_pattern](node_16_asyc_pattern/README.md)
 - [node_19_request_respond](node_19_request_respond/README.md)
 - [node_13_uninstall_package](node_13_uninstall_package/README.md)
+- [node_35_additional_middleware_info](node_35_additional_middleware_info/README.md)
 - [node_12_package_scripts](node_12_package_scripts/README.md)
 - [node_21_express](node_21_express/README.md)
 - [node_14_global_deps](node_14_global_deps/README.md)
 
 ## READMEs in other folders
+- [my_nodejs_tutorial_notes](README.md)
 - [client](node_20_webServer/node-express-course/06.5-jobster-api/starter/client/README.md)
 - [client](node_20_webServer/node-express-course/06.5-jobster-api/final/client/README.md)
 - [front-end](node_20_webServer/node-express-course/11-auth-workflow/starter/front-end/README.md)
