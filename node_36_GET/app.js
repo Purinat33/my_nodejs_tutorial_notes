@@ -46,6 +46,23 @@ app.post('/login', (req,res)=>{
         return res.status(401).send(`No input detected`);
 });
 
+app.post('/api/people', (req,res)=>{
+    const {name} = req.body;
+    if(!name){
+        return res
+        .status(400).json({success:false, msg:`Message cannot be blank`});
+    }
+    res.status(201).send({success:true, identity: name})
+});
+
+app.post('/api/postman/people', (req,res)=>{
+    const {name} = req.body;
+    if(!name){
+    return res
+        .status(400).json({success:false, msg:`Message cannot be blank`});
+    }
+    res.status(201).send({success:true, data: [...people, name]})
+})
 
 app.listen(3000, ()=>{
     console.log(`Server is listening on port 3000...`);
