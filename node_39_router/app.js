@@ -6,6 +6,20 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 
+//We can see that the workspace is starting to get crowded
+//So we will use routers
+//Router to group routes together
+//And use with controllers
+//MVC controller
+
+//Notice we have 2 distinct groups
+//1. login route
+app.post('/login', (req,res)=>{
+
+})
+
+
+//2. api/people routes
 app.get('/api/people', (req,res)=>{
     res.status(200).json({success:true, data:people});
 })
@@ -64,6 +78,8 @@ app.delete('/api/people/:id', (req,res)=>{
     return res.status(200).json({success:true, data:newPeople})
 
 }); //Setup is very familiar with PUT()
+
+
 
 app.listen(3000, (req,res)=>{
     console.log('Server is listening on port 3000...');
